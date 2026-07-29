@@ -8,6 +8,7 @@
 //   - captures/_load_end.html.erb   -> 「すべてを読み込み終わりました」
 //   - captures/show.html.erb        -> キャプチャー詳細 (30 件)
 //   - accounts/show.html.erb        -> アカウントページ (サインアウト時の分岐)
+//   - errors/404.html.erb           -> 404 ページ (request_id は静的化により省略)
 //
 // サービス終了により動作しないリンク・ボタンには data-service-ended を付け、
 // public/assets/application.js がトースト通知に差し替える。
@@ -20,7 +21,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const publicDir = join(root, "public")
 
 const site = JSON.parse(await readFile(join(root, "data", "site.json"), "utf8"))
-const { origin, account, captures } = site
+const { origin, ga4_id: ga4Id, account, captures } = site
 
 // ---- ヘルパー ----
 
@@ -47,8 +48,23 @@ const capturePath = (capture) => `/captures/${capture.aid}`
 
 // ---- レイアウト ----
 
-// layouts/application.html.erb 相当。csrf/csp、importmap、GA4 は静的化により省いている。
-const layout = ({ title, robots = "noindex, nofollow, noarchive", body }) => `<!DOCTYPE html>
+// layouts/application.html.erb の Google タグ相当。本体は production のみで出す。
+const ga4Tag = ga4Id
+  ? `
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-${ga4Id}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-${ga4Id}");
+    </script>`
+  : ""
+
+// layouts/application.html.erb 相当。csrf/csp と importmap は静的化により省いている。
+// robots は本体だとトップページ以外 noindex だが、静的アーカイブとして公開するため
+// 全ページ index, follow, archive にしている。
+const layout = ({ title, robots = "index, follow, archive", body }) => `<!DOCTYPE html>
 <html lang="ja">
   <head>
     <!-- 本体は Rails が Content-Type ヘッダで charset を返すが、静的配信では明示しておく -->
@@ -59,12 +75,12 @@ const layout = ({ title, robots = "noindex, nofollow, noarchive", body }) => `<!
     <meta property="og:title" content="${escapeHtml(fullTitle(title))}">
     <meta property="og:description" content="BeAlive. いつもの日常を相互確認。">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="${origin}/static_assets/images/bealive-1.png">
+    <meta property="og:image" content="${origin}/static_assets/images/bealive-1-og.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta http-equiv="content-language" content="ja">
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/application.css">
-    <script src="/assets/application.js" defer></script>
+    <script src="/assets/application.js" defer></script>${ga4Tag}
   </head>
 
   <body>
@@ -173,7 +189,6 @@ const indexPage = () => {
   )
   return layout({
     title: null,
-    robots: "index, follow, archive",
     body: `      <h1>BeAlive.</h1>
       <p>いつもの日常を相互確認。</p>
       <div>
@@ -288,6 +303,17 @@ ${timeline(captures)}
       </div>`,
   })
 
+// errors/404.html.erb 相当。request_id は静的配信では出せないので省いている。
+// 存在しないパスなのでここだけ noindex にしている。
+const notFoundPage = () =>
+  layout({
+    title: "Not Found - 404",
+    robots: "noindex, nofollow, noarchive",
+    body: `      <h1>Not Found - 404</h1>
+      <p>お探しのページは存在しません。</p>
+      <a href="/">トップへ</a>`,
+  })
+
 // ---- 書き出し ----
 
 // wrangler.jsonc の html_handling: auto-trailing-slash では、/foo は /foo.html を
@@ -305,6 +331,8 @@ for (const capture of captures) {
   written.push(await write(`captures/${capture.aid}`, capturePage(capture)))
 }
 written.push(await write(`@${account.name_id}`, accountPage()))
+// wrangler.jsonc の not_found_handling: 404-page が参照する
+written.push(await write("404", notFoundPage()))
 
 console.log(`wrote ${written.length} pages:`)
 for (const path of written) console.log(`  ${path}`)

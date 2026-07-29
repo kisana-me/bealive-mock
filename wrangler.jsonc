@@ -6,8 +6,9 @@
   "compatibility_date": "2025-07-01",
   "assets": {
     "directory": "./public",
-    // /captures/<aid> で /captures/<aid>/index.html を返す
+    // /captures/<aid> で /captures/<aid>.html を返す
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "none"
+    // 存在しないパスは public/404.html を 404 で返す
+    "not_found_handling": "404-page"
   }
 }
