@@ -1,0 +1,344 @@
+/*
+ * bealive (Rails) の app/assets/stylesheets を、このモックで使う分だけ結合したもの。
+ * 順序は Rails の require_tree . -> require_self に合わせている。
+ * - capture.css: 全文をそのまま流用
+ * - pages.css: 使用するクラスのみ流用
+ * - application.css: 全文をそのまま流用
+ * 末尾の「モック固有」以降のみ、このリポジトリで追加したスタイル。
+ */
+
+/* ---- capture.css ---- */
+
+.captures-row {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.captures-row:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.captures-list {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.capture-wrap a,
+.capture-wrap a:visited,
+.capture-wrap a:hover,
+.capture-wrap a:active {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.capture-wrap:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.capture {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+.capture-person {
+}
+
+.capture-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+}
+
+.capture-nameplate{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.capture-minicomment {
+  margin-left: 0.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.capture-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #cbcbcb;
+}
+
+.capture-info div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.capture-commentbox {
+  background: #333;
+  padding: 7px;
+  border-radius: 7px;
+  line-height: 24px;
+}
+
+.capture-fullcomment {
+  margin-left: 0.5em;
+}
+
+/* 画像 */
+
+.capture-image {
+  position: relative;
+  display: inline-block;
+}
+
+.capture-image .front-image {
+  width: 100%;
+  border: 2px solid #fff;
+  border-radius: 14px;
+  box-sizing: border-box;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.capture-image .back-image {
+  width: 28%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  border: 2px solid #000;
+  border-radius: 7px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.capture-image-dummy {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 14px;
+  box-sizing: border-box;
+  aspect-ratio: 3 / 4;
+}
+
+/* ---- pages.css ---- */
+
+.pages-link-button {
+  padding: 14px;
+  background: #171717;
+  display: inline-block;
+  border-radius: 7px;
+  color: #ffcd4f;
+  border: 1px solid;
+}
+
+.account-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+}
+
+/* ---- application.css ---- */
+
+.field_with_errors {
+  border: 1px solid red;
+  padding: 7px;
+}
+.flash {
+  padding: 7px;
+  color: black;
+}
+.notice {
+  background: #b7ff8d;
+}
+.alert {
+  background: #ff9f9f;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  background: #000;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 70px;
+  top: 0;
+  border-bottom: 1px solid #777;
+  z-index: 999;
+}
+footer {
+  text-align: center;
+  border-top: 1px solid #777;
+  padding: 10px;
+  box-sizing: border-box;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li {
+  margin: 20px 0;
+}
+footer ul li a,
+footer ul li a:visited,
+footer ul li a:hover,
+footer ul li a:active {
+  color: white;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: #ffcd4f;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+main {
+  min-height: 100vh;
+  margin: 70px auto 0;
+  padding: 20px;
+  max-width: 720px;
+}
+
+.bealive-copylight {
+  color: #777;
+}
+.bealive-logo {
+  font-size: 32px;
+}
+.bealive-logo a {
+  color: white;
+}
+
+/* MENU */
+
+body.no-scroll {
+  overflow: hidden;
+}
+.hamburger-menu {
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.close-menu {
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+.menu ul li {
+  margin: 20px 0;
+}
+.menu ul li a,
+.menu ul li a:visited,
+.menu ul li a:hover,
+.menu ul li a:active {
+  color: white;
+}
+.header-menu-account {
+  font-size: 24px;
+}
+.header-menu-account button {
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.header-menu-general {
+  font-size: 16px;
+}
+.menu.is-active {
+  display: block;
+}
+
+/* ---- モック固有 ---- */
+
+/* サービス終了のお知らせ (トップページ) */
+.service-ended {
+  border: 2px solid red;
+  border-radius: 7px;
+  padding: 14px;
+  margin: 20px 0;
+}
+.service-ended p {
+  margin: 0 0 0.5em;
+}
+.service-ended p:last-child {
+  margin-bottom: 0;
+}
+
+/* サービス終了により動作しないリンク・ボタンを押したときのトースト */
+.toast {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 680px;
+  box-sizing: border-box;
+  background: #333;
+  border: 1px solid #777;
+  border-radius: 7px;
+  padding: 14px;
+  text-align: center;
+  line-height: 24px;
+  z-index: 1000;
+}
+.toast.is-active {
+  display: block;
+}

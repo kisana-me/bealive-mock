@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 本体は Rails が Content-Type ヘッダで charset を返すが、静的配信では明示しておく -->
+    <meta charset="utf-8">
+    <title>Not Found - 404 | BeAlive.</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta property="og:title" content="Not Found - 404 | BeAlive.">
+    <meta property="og:description" content="BeAlive. いつもの日常を相互確認。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://bealive.amiverse.net/static_assets/images/bealive-1-og.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta http-equiv="content-language" content="ja">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/application.css">
+    <script src="/assets/application.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PND2STXF8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-2PND2STXF8");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="bealive-logo"><a href="/">BeAlive.</a></div>
+      <div class="header-menu" data-controller="menu">
+        <button data-action="click->menu#toggle" class="hamburger-menu">&#9776;</button>
+        <nav data-menu-target="nav" class="menu">
+          <button data-action="click->menu#toggle" class="close-menu">&times;</button>
+          <div class="bealive-logo"><a href="/">BeAlive.</a></div>
+          <ul class="header-menu-account">
+            <li><a href="/sessions/start" data-service-ended>続ける</a></li>
+          </ul>
+          <ul class="header-menu-general">
+            <li><a href="https://anyur.com/terms-of-service">利用規約</a></li>
+            <li><a href="https://anyur.com/privacy-policy">プライバシーポリシー</a></li>
+            <li><a href="https://anyur.com/contact">お問い合わせ</a></li>
+            <li><a href="/">BeAlive.</a></li>
+          </ul>
+          <div class="bealive-copylight">© BeAlive. 2025</div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <h1>Not Found - 404</h1>
+      <p>お探しのページは存在しません。</p>
+      <a href="/">トップへ</a>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="https://anyur.com/terms-of-service">利用規約</a></li>
+        <li><a href="https://anyur.com/privacy-policy">プライバシーポリシー</a></li>
+        <li><a href="https://anyur.com/contact">お問い合わせ</a></li>
+        <li><a href="/">BeAlive.</a></li>
+      </ul>
+      <div class="bealive-copylight">© BeAlive. 2025</div>
+    </footer>
+    <div class="toast" data-toast>
+      BeAlive. はサービス終了しました <a href="/">詳しくはこちら</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+{
+  "origin": "https://bealive.amiverse.net",
+  "ga4_id": "2PND2STXF8",
+  "account": {
+    "name": "kisana",
+    "name_id": "kisana",
+    "description": "",
+    "icon_url": "/images/variants/account-kisana-icon.webp",
+    "following_count": 0,
+    "followers_count": 0
+  },
+  "captures": [
+    {
+      "n": 1,
+      "aid": "wjy53t2ld0sub3",
+      "captured_at": "2025-06-08T15:01:00+09:00",
+      "main_photo": "/images/variants/capture-1-main.webp",
+      "sub_photo": "/images/variants/capture-1-sub.webp"
+    },
+    {
+      "n": 2,
+      "aid": "i5n2xmj06v8g8o",
+      "captured_at": "2025-06-08T15:02:00+09:00",
+      "main_photo": "/images/variants/capture-2-main.webp",
+      "sub_photo": "/images/variants/capture-2-sub.webp"
+    },
+    {
+      "n": 3,
+      "aid": "8bmqsv5vub3x1z",
+      "captured_at": "2025-06-08T15:03:00+09:00",
+      "main_photo": "/images/variants/capture-3-main.webp",
+      "sub_photo": "/images/variants/capture-3-sub.webp"
+    },
+    {
+      "n": 4,
+      "aid": "fx6qdhgeaq5jx1",
+      "captured_at": "2025-06-08T15:04:00+09:00",
+      "main_photo": "/images/variants/capture-4-main.webp",
+      "sub_photo": "/images/variants/capture-4-sub.webp"
+    },
+    {
+      "n": 5,
+      "aid": "hbokdwg4rx0uge",
+      "captured_at": "2025-06-08T15:05:00+09:00",
+      "main_photo": "/images/variants/capture-5-main.webp",
+      "sub_photo": "/images/variants/capture-5-sub.webp"
+    },
+    {
+      "n": 6,
+      "aid": "wuef7z05onfusv",
+      "captured_at": "2025-06-08T15:06:00+09:00",
+      "main_photo": "/images/variants/capture-6-main.webp",
+      "sub_photo": "/images/variants/capture-6-sub.webp"
+    },
+    {
+      "n": 7,
+      "aid": "mrskp76zdmorus",
+      "captured_at": "2025-06-08T15:07:00+09:00",
+      "main_photo": "/images/variants/capture-7-main.webp",
+      "sub_photo": "/images/variants/capture-7-sub.webp"
+    },
+    {
+      "n": 8,
+      "aid": "ob6rs3085ki2vq",
+      "captured_at": "2025-06-08T15:08:00+09:00",
+      "main_photo": "/images/variants/capture-8-main.webp",
+      "sub_photo": "/images/variants/capture-8-sub.webp"
+    },
+    {
+      "n": 9,
+      "aid": "l9458j1vr7m146",
+      "captured_at": "2025-06-08T15:09:00+09:00",
+      "main_photo": "/images/variants/capture-9-main.webp",
+      "sub_photo": "/images/variants/capture-9-sub.webp"
+    },
+    {
+      "n": 10,
+      "aid": "mzbzjx3kvkdx63",
+      "captured_at": "2025-06-08T15:10:00+09:00",
+      "main_photo": "/images/variants/capture-10-main.webp",
+      "sub_photo": "/images/variants/capture-10-sub.webp"
+    },
+    {
+      "n": 11,
+      "aid": "c0855iesze8trx",
+      "captured_at": "2025-06-08T15:11:00+09:00",
+      "main_photo": "/images/variants/capture-11-main.webp",
+      "sub_photo": "/images/variants/capture-11-sub.webp"
+    },
+    {
+      "n": 12,
+      "aid": "7n90jaqr88y19m",
+      "captured_at": "2025-06-08T15:12:00+09:00",
+      "main_photo": "/images/variants/capture-12-main.webp",
+      "sub_photo": "/images/variants/capture-12-sub.webp"
+    },
+    {
+      "n": 13,
+      "aid": "2qvlg1ft62d6rb",
+      "captured_at": "2025-06-08T15:13:00+09:00",
+      "main_photo": "/images/variants/capture-13-main.webp",
+      "sub_photo": "/images/variants/capture-13-sub.webp"
+    },
+    {
+      "n": 14,
+      "aid": "1qmxrlj8md678j",
+      "captured_at": "2025-06-08T15:14:00+09:00",
+      "main_photo": "/images/variants/capture-14-main.webp",
+      "sub_photo": "/images/variants/capture-14-sub.webp"
+    },
+    {
+      "n": 15,
+      "aid": "yyno7j9wiaj6jz",
+      "captured_at": "2025-06-08T15:15:00+09:00",
+      "main_photo": "/images/variants/capture-15-main.webp",
+      "sub_photo": "/images/variants/capture-15-sub.webp"
+    },
+    {
+      "n": 16,
+      "aid": "f6lbbowl611q4h",
+      "captured_at": "2025-06-08T15:16:00+09:00",
+      "main_photo": "/images/variants/capture-16-main.webp",
+      "sub_photo": "/images/variants/capture-16-sub.webp"
+    },
+    {
+      "n": 17,
+      "aid": "mmnrn2lld9hw57",
+      "captured_at": "2025-06-08T15:17:00+09:00",
+      "main_photo": "/images/variants/capture-17-main.webp",
+      "sub_photo": "/images/variants/capture-17-sub.webp"
+    },
+    {
+      "n": 18,
+      "aid": "9j23mqaomuwfoc",
+      "captured_at": "2025-06-08T15:18:00+09:00",
+      "main_photo": "/images/variants/capture-18-main.webp",
+      "sub_photo": "/images/variants/capture-18-sub.webp"
+    },
+    {
+      "n": 19,
+      "aid": "tlw3qb7l03q50m",
+      "captured_at": "2025-06-08T15:19:00+09:00",
+      "main_photo": "/images/variants/capture-19-main.webp",
+      "sub_photo": "/images/variants/capture-19-sub.webp"
+    },
+    {
+      "n": 20,
+      "aid": "mduw5i7lje5v6j",
+      "captured_at": "2025-06-08T15:20:00+09:00",
+      "main_photo": "/images/variants/capture-20-main.webp",
+      "sub_photo": "/images/variants/capture-20-sub.webp"
+    },
+    {
+      "n": 21,
+      "aid": "20ppvh0n3vuerm",
+      "captured_at": "2025-06-08T15:21:00+09:00",
+      "main_photo": "/images/variants/capture-21-main.webp",
+      "sub_photo": "/images/variants/capture-21-sub.webp"
+    },
+    {
+      "n": 22,
+      "aid": "bj9tos1jecx9q9",
+      "captured_at": "2025-06-08T15:22:00+09:00",
+      "main_photo": "/images/variants/capture-22-main.webp",
+      "sub_photo": "/images/variants/capture-22-sub.webp"
+    },
+    {
+      "n": 23,
+      "aid": "bjxy7x7f6wkvdi",
+      "captured_at": "2025-06-08T15:23:00+09:00",
+      "main_photo": "/images/variants/capture-23-main.webp",
+      "sub_photo": "/images/variants/capture-23-sub.webp"
+    },
+    {
+      "n": 24,
+      "aid": "e59x91emex6hzp",
+      "captured_at": "2025-06-08T15:24:00+09:00",
+      "main_photo": "/images/variants/capture-24-main.webp",
+      "sub_photo": "/images/variants/capture-24-sub.webp"
+    },
+    {
+      "n": 25,
+      "aid": "smuy6scaqfz4ze",
+      "captured_at": "2025-06-08T15:25:00+09:00",
+      "main_photo": "/images/variants/capture-25-main.webp",
+      "sub_photo": "/images/variants/capture-25-sub.webp"
+    },
+    {
+      "n": 26,
+      "aid": "iizu7md4gcjb37",
+      "captured_at": "2025-06-08T15:26:00+09:00",
+      "main_photo": "/images/variants/capture-26-main.webp",
+      "sub_photo": "/images/variants/capture-26-sub.webp"
+    },
+    {
+      "n": 27,
+      "aid": "uvwfp1lzyk6iv6",
+      "captured_at": "2025-06-08T15:27:00+09:00",
+      "main_photo": "/images/variants/capture-27-main.webp",
+      "sub_photo": "/images/variants/capture-27-sub.webp"
+    },
+    {
+      "n": 28,
+      "aid": "k4bj3dfkg9b9ng",
+      "captured_at": "2025-06-08T15:28:00+09:00",
+      "main_photo": "/images/variants/capture-28-main.webp",
+      "sub_photo": "/images/variants/capture-28-sub.webp"
+    },
+    {
+      "n": 29,
+      "aid": "2np8v010pf6g70",
+      "captured_at": "2025-06-08T15:29:00+09:00",
+      "main_photo": "/images/variants/capture-29-main.webp",
+      "sub_photo": "/images/variants/capture-29-sub.webp"
+    },
+    {
+      "n": 30,
+      "aid": "lflxcs6r82up2g",
+      "captured_at": "2025-06-08T15:30:00+09:00",
+      "main_photo": "/images/variants/capture-30-main.webp",
+      "sub_photo": "/images/variants/capture-30-sub.webp"
+    }
+  ]
+}
