@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 本体は Rails が Content-Type ヘッダで charset を返すが、静的配信では明示しておく -->
+    <meta charset="utf-8">
+    <title>みる | BeAlive.</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta property="og:title" content="みる | BeAlive.">
+    <meta property="og:description" content="BeAlive. いつもの日常を相互確認。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://bealive.amiverse.net/static_assets/images/bealive-1.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta http-equiv="content-language" content="ja">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/application.css">
+    <script src="/assets/application.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="bealive-logo"><a href="/">BeAlive.</a></div>
+      <div class="header-menu" data-controller="menu">
+        <button data-action="click->menu#toggle" class="hamburger-menu">&#9776;</button>
+        <nav data-menu-target="nav" class="menu">
+          <button data-action="click->menu#toggle" class="close-menu">&times;</button>
+          <div class="bealive-logo"><a href="/">BeAlive.</a></div>
+          <ul class="header-menu-account">
+            <li><a href="/sessions/start" data-service-ended>続ける</a></li>
+          </ul>
+          <ul class="header-menu-general">
+            <li><a href="https://anyur.com/terms-of-service">利用規約</a></li>
+            <li><a href="https://anyur.com/privacy-policy">プライバシーポリシー</a></li>
+            <li><a href="https://anyur.com/contact">お問い合わせ</a></li>
+            <li><a href="/">BeAlive.</a></li>
+          </ul>
+          <div class="bealive-copylight">© BeAlive. 2025</div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <h1>みる</h1>
+
+      <div class="capture">
+
+        <div class="capture-person">
+          <div class="capture-nameplate">
+            <img class="capture-icon" src="/static_assets/images/bealive-logo.png" alt="" />
+            <a href="/@kisana">kisana</a>がリクエスト
+          </div>
+        </div>
+
+        <div class="capture-person">
+          <div class="capture-nameplate">
+            <img class="capture-icon" src="/static_assets/images/bealive-logo.png" alt="" />
+            <a href="/@kisana">kisana</a>が撮影
+          </div>
+        </div>
+
+        <div class="capture-image">
+          <img class="front-image" src="/images/variants/capture-3-main.webp" alt="" />
+          <img class="back-image" src="/images/variants/capture-3-sub.webp" alt="" />
+        </div>
+
+        <div class="capture-info">
+          <div class="capture-visibility">
+            公開
+          </div>
+          <div class="capture-time">
+            06月 08日 15時 03分に撮影
+          </div>
+        </div>
+
+        <div class="capture-controll">
+        </div>
+
+        <div class="capture-commentbox">
+          <p>コメントはそのうち実装</p>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+    </main>
+    <footer>
+      <ul>
+        <li><a href="https://anyur.com/terms-of-service">利用規約</a></li>
+        <li><a href="https://anyur.com/privacy-policy">プライバシーポリシー</a></li>
+        <li><a href="https://anyur.com/contact">お問い合わせ</a></li>
+        <li><a href="/">BeAlive.</a></li>
+      </ul>
+      <div class="bealive-copylight">© BeAlive. 2025</div>
+    </footer>
+    <div class="toast" data-toast>
+      BeAlive. はサービス終了しました <a href="/">詳しくはこちら</a>
+    </div>
+  </body>
+</html>

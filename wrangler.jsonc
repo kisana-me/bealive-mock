@@ -1,0 +1,13 @@
+{
+  // main (Worker スクリプト) を持たない、静的アセットのみの Worker。
+  // 静的アセットへのリクエストは Workers のリクエスト数にカウントされない。
+  // https://developers.cloudflare.com/workers/static-assets/
+  "name": "bealive-mock",
+  "compatibility_date": "2025-07-01",
+  "assets": {
+    "directory": "./public",
+    // /captures/<aid> で /captures/<aid>/index.html を返す
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
