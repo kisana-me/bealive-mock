@@ -118,7 +118,7 @@ const captureCard = (capture) => `      <div class="capture-wrap">
 
             <div class="capture-person">
               <div class="capture-nameplate">
-                <img class="capture-icon" src="${account.icon_url}" alt="" />
+                <img class="capture-icon" src="${account.icon_url}" />
                 <strong>${escapeHtml(account.name)}</strong>がリクエスト
               </div>
               <div class="capture-minicomment">
@@ -127,7 +127,7 @@ const captureCard = (capture) => `      <div class="capture-wrap">
 
             <div class="capture-person">
               <div class="capture-nameplate">
-                <img class="capture-icon" src="${account.icon_url}" alt="" />
+                <img class="capture-icon" src="${account.icon_url}" />
                 <strong>${escapeHtml(account.name)}</strong>が撮影
               </div>
               <div class="capture-minicomment">
@@ -135,8 +135,8 @@ const captureCard = (capture) => `      <div class="capture-wrap">
             </div>
 
             <div class="capture-image">
-              <img class="front-image" src="${capture.main_photo}" loading="lazy" alt="" />
-              <img class="back-image" src="${capture.sub_photo}" loading="lazy" alt="" />
+              <img class="front-image" src="${capture.main_photo}" loading="lazy" />
+              <img class="back-image" src="${capture.sub_photo}" loading="lazy" />
             </div>
 
             <div class="capture-info">
@@ -205,21 +205,21 @@ const capturePage = (capture) =>
 
         <div class="capture-person">
           <div class="capture-nameplate">
-            <img class="capture-icon" src="${account.icon_url}" alt="" />
+            <img class="capture-icon" src="${account.icon_url}" />
             <a href="${accountPath}">${escapeHtml(account.name)}</a>がリクエスト
           </div>
         </div>
 
         <div class="capture-person">
           <div class="capture-nameplate">
-            <img class="capture-icon" src="${account.icon_url}" alt="" />
+            <img class="capture-icon" src="${account.icon_url}" />
             <a href="${accountPath}">${escapeHtml(account.name)}</a>が撮影
           </div>
         </div>
 
         <div class="capture-image">
-          <img class="front-image" src="${capture.main_photo}" alt="" />
-          <img class="back-image" src="${capture.sub_photo}" alt="" />
+          <img class="front-image" src="${capture.main_photo}" />
+          <img class="back-image" src="${capture.sub_photo}" />
         </div>
 
         <div class="capture-info">
@@ -250,7 +250,7 @@ const accountPage = () =>
   layout({
     title: `${account.name}さん`,
     body: `      <div>
-        <img class="account-icon" src="${account.icon_url}" alt="" />
+        <img class="account-icon" src="${account.icon_url}" />
       </div>
 
       <div>

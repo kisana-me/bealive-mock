@@ -51,16 +51,20 @@ node tools/build.mjs
 python3 tools/prepare-images.py ../bealive/src/db/seed_images
 ```
 
-`public/images/variants/*.webp` は bealive の seed 画像を、本番の
+`public/images/variants/capture-*.webp` は bealive の seed 画像を、本番の
 `bealive_capture` バリアント (`1500x2000` 中央切り抜き・WebP quality 80) と
-同じ条件で書き出したものです。
+同じ条件で書き出したものです。`account-kisana-icon.webp` は本番のアイコンを
+そのまま持ってきています。
 
 ### キャプチャーの aid
 
 `data/site.json` の `captures[].aid` が詳細ページのパスになります。
-現在は本番の aid を参照できなかったため仮の値が入っています。
-本番と同じ URL で置き換える場合は、この `aid` を実際の値に差し替えて
-`node tools/build.mjs` を再実行してください (古い `public/captures/<aid>/` は削除)。
+本番 (bealive.amiverse.net) の公開タイムラインから取得した実際の aid が入っているので、
+`/captures/<aid>` は本番と同じ URL のままです。
+
+seed の連番と本番のレコードは撮影日時 (`15:00` + 連番の分) で対応するため、
+画像もその対応で紐付けています。`aid` を変更した場合は
+`node tools/build.mjs` を再実行してください (古い `public/captures/<aid>.html` は削除)。
 
 ## デプロイ
 
