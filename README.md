@@ -53,15 +53,17 @@ tools/prepare-images.py
                  bealive のアセットから配信用の画像を作る
 public/          Cloudflare Workers に配信させるディレクトリ (生成物もコミット済み)
 wrangler.jsonc   静的アセットのみの Worker 設定
+package.json     wrangler のバージョン固定と npm scripts
 ```
 
 ## ビルド
 
-依存パッケージはありません。
+`public/` は生成物ごとコミットしてあるので、デプロイ時にビルドは要りません。
+ページを作り直すときだけ次を実行します (Node の標準ライブラリのみで動きます)。
 
 ```sh
 # ページの生成 (data/site.json を変更したら実行する)
-node tools/build.mjs
+npm run build   # = node tools/build.mjs
 
 # 画像の生成 (初回のみ実施済み。Pillow が必要)
 python3 tools/prepare-images.py ../bealive/src
@@ -88,18 +90,34 @@ seed の連番と本番のレコードは撮影日時 (`15:00` + 連番の分) �
 `wrangler.jsonc` は `main` (Worker スクリプト) を持たない静的アセットのみの設定です。
 静的アセットへのリクエストは Workers のリクエスト数にカウントされません。
 
+### GitHub 連携 (Workers Builds) で自動デプロイする
+
+推奨。ダッシュボードの Workers & Pages → Create application → Import a repository から
+このリポジトリを選び、次を設定します。
+
+| 設定 | 値 |
+| --- | --- |
+| Git branch | `main` |
+| Build command | 空 (`public/` をコミットしているので不要) |
+| Deploy command | `npx wrangler deploy` (既定値のまま) |
+
+`main` に push するたびに自動でデプロイされます。
+ダッシュボード側の Worker 名は `wrangler.jsonc` の `name` (`bealive-mock`) と
+一致させる必要があります。API トークンは Cloudflare が自動発行するので用意は要りません。
+
+### 手元からデプロイする
+
 ```sh
+npm install
+
 # 1. Cloudflare アカウントにログイン (ブラウザが開く)
 npx wrangler login
 
-# 2. ローカルで確認 (実際の Workers ランタイムで配信される)
-npx wrangler dev
-
-# 3. デプロイ
-npx wrangler deploy
+# 2. デプロイ
+npm run deploy   # = wrangler deploy
 ```
 
-デプロイすると `https://bealive-mock.<サブドメイン>.workers.dev` で公開されます。
+どちらの方法でも `https://bealive-mock.<サブドメイン>.workers.dev` で公開されます。
 
 ### 独自ドメイン (bealive.amiverse.net) で配信する
 
@@ -108,7 +126,7 @@ Workers & Pages → bealive-mock → Settings → Domains & Routes で
 Custom Domain として `bealive.amiverse.net` を追加します。
 DNS レコードは Cloudflare が自動で張り替えるので、既存の A / CNAME は先に消しておきます。
 
-`wrangler.jsonc` に書いておく場合は次を足します (`zone_name` は対象のゾーン)。
+`wrangler.jsonc` に書いておく場合は次を足します。
 
 ```jsonc
 "routes": [
@@ -123,3 +141,16 @@ DNS レコードは Cloudflare が自動で張り替えるので、既存の A /
 `/%40kisana` へ 307 リダイレクトされたうえで表示されます (本体と同じ URL のままでも到達可能)。
 
 存在しないパスは `public/404.html` を 404 ステータスで返します。
+
+## ローカル確認
+
+`wrangler dev` を使ってください。実際の Workers ランタイムで配信されるので、
+`html_handling` (拡張子なしの URL) と `not_found_handling` (404 ページ) も本番と同じ挙動になります。
+
+```sh
+npm install
+npm run dev   # = wrangler dev  -> http://localhost:8787
+```
+
+`python3 -m http.server` のような素の静的サーバーでは
+`/captures/<aid>` や `/@kisana` が 404 になるので確認になりません。
